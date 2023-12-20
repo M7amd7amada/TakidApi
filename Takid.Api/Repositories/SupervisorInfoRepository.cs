@@ -17,7 +17,6 @@ public class SupervisorInfoRepository : ISupervisorInfoRepository
 
     public async Task<IEnumerable<SupervisorInfo>> GetTopWorkingSupervisorsAsync(int companyId)
     {
-
         using IDbConnection connection = _context.CreateConnection();
         var top5WorkingSupervisors = await connection.QueryAsync<SupervisorInfo>(
             "Get_Top_5_Working_Supervisors",
